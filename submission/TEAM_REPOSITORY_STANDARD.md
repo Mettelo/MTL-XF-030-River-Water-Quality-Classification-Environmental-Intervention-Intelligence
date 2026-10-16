@@ -1,10 +1,10 @@
-# MTL-XF-030 — Mandatory team repository standard
+# MTL-XF-030 — Team repository standard
 
-## Ownership and setup
+## Ownership
 
-Create `MTL-XF-030-<team-name>` under the **Mettelo GitHub organisation**. Add every member using their own GitHub account. The team repository contains delivery evidence; this master remains the challenge specification. Record the master URL and reviewed specification commit in your README.
+Create `MTL-XF-030-<team-name>` under **Mettelo** and add every member through an individual GitHub account. Record this master URL, reviewed specification commit and final submission commit/tag. The master defines scope; the team repository contains delivery evidence.
 
-## Required structure
+## Required areas
 
 ```text
 README.md
@@ -33,34 +33,18 @@ deliverables/
 submission/FINAL_SUBMISSION.md
 ```
 
-Use the implementation folders relevant to your chosen free toolchain; explain unused folders. SQL and notebooks are alternatives where appropriate, not a requirement to duplicate logic. Record dependencies and setup versions. Supply accessible BI exports if interactive access is unavailable.
+Use implementation folders appropriate to the free toolchain; SQL/notebooks need not duplicate logic. Explain unused areas. Provide environment/dependency versions and a reviewable static dashboard export where interactive access is unavailable.
 
-## Project README requirements
+## Project README and evidence
 
-State Which English river water bodies warrant further environmental investigation based on ecological/chemical classifications and recorded measures, with cycle comparability and evidence gaps made explicit? Include team/roles, frozen cohort, analytical grain, setup/run instructions, key outputs, five findings, shortlist/scenario links, limitations, quality/UAT status and submission version.
+State the decision, **Director of Catchment Environment & River Improvement** as the simulated decision owner, approved cohort, core/extension status, run steps, five findings, scenario/shortlist links, limitations, UAT and independent rerun results. Link each D/AC/DT item to its actual artefact, owner, reviewer and state.
 
-## Collaboration and roles
+Responsibilities are defined once in [the project brief](../project/PROJECT_BRIEF.md). Assign named team owners and review partners. Use issues, meaningful commits, branches, PRs and reviews where practical. One member's bulk upload is insufficient evidence of multidisciplinary contribution. `CONTRIBUTIONS.md` links authored work, reviews and presentation/handover contribution for every member; commit count alone is insufficient.
 
-| Accountable role | Project responsibility and evidence |
-| --- | --- |
-| Business Analyst / Delivery Lead | Own the commissioned decision for Confidential Catchment Environment & River Improvement Authority; record at least eight prioritised requirements, each linked to a deliverable and test; maintain weekly scope and decision logs. |
-| Data Governance Analyst | Register every 030 input and critical field; approve the frozen cohort, licence evidence, glossary and 100% headline-KPI lineage before analysis. |
-| Data Engineer | Implement the stated 030 analytical grain, ingestion and exclusions; deliver a clean rerun with row-count/checksum evidence and no unexplained key duplicates. |
-| BI Developer | Build executive, diagnostic and quality views for the commissioned decision; reconcile at least five 030 dashboard measures and test every visible filter. |
-| Environmental Classification Analyst | Validate status orders and cycle comparability, and reconcile five body/classification counts. |
-| Catchment / GIS Data Steward | Own river-type filters, stable water-body identifiers and many-to-many measure linkage; quantify all unmatched records. |
-| Environmental Programme & Assurance Analyst | Review up to ten investigation cases and prevent recorded measures being presented as proven effectiveness. |
+## Project-specific acceptance
 
-Use issues for requirements/work packages, meaningful commits, branches, PRs and reviews where practical. A single bulk upload by one member is not sufficient collaboration evidence. `CONTRIBUTIONS.md` must link each member's artefacts, authored work, reviews, issues/PRs/commits and presentation/handover contribution. Commit totals alone do not establish contribution.
+1. Exactly one declared classification year/cycle drives the core baseline and denominator.
+2. Distinct body counts remain unchanged after linking classification elements and measures.
+3. Each investigation distinguishes weak condition, missing evidence and recorded measure status without claiming ecological effectiveness.
 
-## Evidence rules
-
-D1–D12 and AC1–AC12 need direct artefact/test links. Store outputs separately from raw inputs and preserve a manifest. Do not claim a freeze without actual checksums and source validation. Keep every manual adjustment in code or an auditable transformation record. Never commit credentials, prohibited personal data or confidential materials.
-
-## Domain review requirements
-
-- Measures recorded in an administrative dataset do not prove implementation or ecological effectiveness.
-- Do not average ordinal status labels into a continuous pollution score or combine chemical and ecological scales.
-- Classification changes can reflect monitoring and method changes; these files do not supply raw chemical sampling histories.
-
-Include the four mandatory domain tests and at least six additional meaningful scenarios. A second member must verify the core rerun and five headline BI measures. Record any unavailable metric or approved scope change visibly.
+Keep actual source support and mandatory blockers visible. Preserve raw/curated separation, manifests and every manual adjustment in code or an auditable record. Never commit credentials, prohibited personal information or invented approvals. Retain the simulated-client declaration in public descriptions.

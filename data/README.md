@@ -1,57 +1,44 @@
-# MTL-XF-030 — Data workspace
+# MTL-XF-030 — Data workspace and support gate
 
-## Required sources and cohort
+## Core contract
 
-Environment Agency Catchment Data Explorer — England classifications and measures CSVs. These are direct machine-readable endpoints maintained by the Environment Agency.
+Retain both agreed England exports. Freeze them within one acquisition batch with separate retrieval timestamps and checksums. Use a single latest complete published classification year/cycle for the core baseline; lock its actual value at Week 2. Core screening is limited to the surface-water category available in the export and must be labelled accurately if rivers cannot be separated from canals/transfers. Use up to ten body-level investigation cases; catchment/measure links remain at their published grain.
 
-Use the agreed Environment Agency England classifications.csv and measures.csv endpoints. They are mutable exports: freeze both at one recorded retrieval timestamp before team analysis. Filter to England river water bodies using actual type codes; include other water-body types only as separately labelled context. Compare classification years/cycles only when methodologically compatible. No raw Water Quality Explorer observations are required.
+## Optional work
 
-[Source register and exact URLs](SOURCE_REGISTER.md)
+Cross-cycle deterioration, raw nutrient time series, causal measure effectiveness and a GIS map needing an additional boundary file are extensions. Cross-cycle change is blocked unless a comparability assessment explicitly passes; a valid single-cycle baseline fully satisfies core delivery.
 
-**Current state:** specification only. No raw datasets have been downloaded or uploaded in this build. Expected size, row count and history statements from the earlier agreement require verification against the actual files. Do not mark the cohort frozen until the manifest and metadata are complete.
+## Acquisition state
 
-## Controlled acquisition and preparation
+No raw data is uploaded by this update. Official documentation checks are recorded in [SOURCE_REGISTER.md](SOURCE_REGISTER.md). File payloads, full schemas, bytes/checksums and final reuse/freeze approvals remain pending where stated. Keep publication-level evidence distinct from acquired-file evidence.
 
-1. Read [SOURCE_REGISTER.md](SOURCE_REGISTER.md); use the exact agreed URLs and official publisher documentation.
-2. Validate that the response is the expected CSV/ODS/XLSX/ZIP rather than an error page. Inspect archive contents and sheet names where relevant.
-3. Record resolved URL, UTC retrieval, release, coverage, filename, bytes, SHA-256 and licence evidence. Log discrepancies before changing sources.
-4. Preserve original bytes in an approved immutable snapshot; later upload only where instructed and redistribution is permitted.
-5. Record source fields, types, valid values, suppression, units and publisher methodology in [metadata](metadata/README.md).
-6. Implement the analytical grain below, verify keys/cardinality and account for excluded/quarantined records.
-7. Reconcile at least five published measures and create curated outputs reproducibly in the team repository.
+## Required source-to-deliverable matrix
 
-## Analytical grain
+Before analysis, create a row per headline measure/required comparison:
+
+`requirement_id | deliverable_id | metric | core_or_extension | source_id | actual_field_or_sheet | valid_grain | coverage | unit_denominator | metadata_evidence | support_status | owner | decision`
+
+Allowed support statuses: documentation-supported; payload-verified; unsupported; optional-not-activated. “Documentation-supported” alone is insufficient for a completed data freeze. If a mandatory field is absent, block its output and resolve the source or approved scope; do not fabricate values or silently waive the requirement.
+
+## Controlled preparation
+
+1. Use registered exact URLs and inspect actual content type, archive members or sheets.
+2. Record version, resolved URL, separate retrieval timestamps, bytes, SHA-256 and licence evidence.
+3. Approve the actual cohort and scope matrix at G1.
+4. Preserve original bytes; transform into curated facts with documented types, keys, hierarchies and joins.
+5. Account for retained/excluded/quarantined rows and quantify all mapping gaps.
+6. Reconcile five source values and execute [DT1–DT10](../project/ACCEPTANCE_CRITERIA.md).
+
+## Model and measures
 
 Classification fact: water-body identifier × year/cycle × classification level/element × status and other published dimensions. Measures fact: published measure identifier × water-body/catchment links × status/category. Link using stable identifiers with a bridge for many-to-many relationships.
 
-## Required metric contract
+The core contract above controls conditional dimensions. Metric formulas have one authoritative home: [DELIVERABLES.md](../project/DELIVERABLES.md). Do not create another incompatible formula copy in the data README.
 
-| Metric | Required definition / calculation |
-| --- | --- |
-| Ecological status distribution | Distinct eligible water bodies by published ecological status within one assessment year/cycle. |
-| Good-or-better ecological share | 100 × eligible bodies with good/high ecological status / bodies with valid comparable ecological status. |
-| Chemical status distribution | Distinct bodies by chemical status, kept separate from ecological status. |
-| Comparable deterioration count | Bodies moving to a worse ordered ecological class between compatible cycles; chemical status uses its own rules. |
-| Recorded measure coverage | 100 × eligible bodies linked to at least one recorded measure / eligible bodies; no effectiveness claim. |
-| Measure status distribution | Distinct measures by available published implementation/status categories; preserve unknowns. |
-| Classification completeness | 100 × bodies with valid target classification / expected eligible bodies. |
-| Join coverage | Matched distinct water bodies / eligible bodies, plus unmatched and multiply linked measure counts. |
+## Data areas
 
-## Mandatory quality risks
+- [Raw snapshots](raw/README.md): unmodified source bytes only when later authorised and permitted.
+- [Reference data](reference/README.md): category/entity/period mappings with version and cardinality.
+- [Metadata](metadata/README.md): manifest, dictionary, methodology, lineage and support/freeze decisions.
 
-- Measures recorded in an administrative dataset do not prove implementation or ecological effectiveness.
-- Do not average ordinal status labels into a continuous pollution score or combine chemical and ecological scales.
-- Classification changes can reflect monitoring and method changes; these files do not supply raw chemical sampling histories.
-
-1. Reconcile distinct-body status counts for five selected classifications/catchments.
-2. Show a multi-measure join cannot inflate the count of water bodies.
-3. Reject a cross-cycle deterioration comparison lacking comparability evidence.
-4. Test unknown status, an unmatched body ID and a non-river exclusion.
-
-## Folder ownership
-
-- [raw](raw/README.md): unmodified approved source snapshots; guidance only at present.
-- [reference](reference/README.md): governed code lists, hierarchies and crosswalks.
-- [metadata](metadata/README.md): source notices, schema, glossary, lineage and manifest evidence.
-
-Curated data, processing code, logs and test results belong in the team delivery repository. Preserve a reproducible boundary between source inputs and generated products. Do not add personal, confidential or paid-source data.
+**Specific control:** Cross-cycle methods, repeated elements and many-to-many measure linkage may create false deterioration, body counts or intervention coverage.

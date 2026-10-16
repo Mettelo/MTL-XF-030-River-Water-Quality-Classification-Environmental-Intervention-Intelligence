@@ -1,66 +1,68 @@
 # MTL-XF-030 — Project brief
 
-## Engagement
+This is a **simulated confidential-client engagement using official public/open data**. Client and stakeholder role labels describe a fictional engagement; do not claim a real external Mettelo customer, employment, endorsement or privileged data access. No raw data is uploaded by this specification update.
 
-This is a **simulated confidential-client engagement** using official public/open data. The client label is fictional and intentionally anonymous. Do not imply a real external Mettelo customer, employment by that client, privileged access or confidential source data. Public source statistics remain public; the engagement framing does not make them confidential.
+**Client:** Confidential Catchment Environment & River Improvement Authority. **Decision owner:** Director of Catchment Environment & River Improvement. **Team:** 6–8. **Duration:** 8 weeks. **Review:** annual classification review and quarterly catchment programme meeting.
 
-**Simulated sponsor:** Confidential Catchment Environment & River Improvement Authority. **Duration:** 8 weeks. **Team:** 6–8 members. **Track:** Cross-Functional. **Sector:** Environment / Water / Catchment Planning.
+## Business problem and commission
 
-## Commission
+The authority must prioritise catchment investigations while classification records repeat each water body across elements and assessments, and measures may link to several places. A flat join can make heavily documented bodies look like more water bodies. Historical method changes and widespread chemical failures also mean a simple worst-status ranking may provide little practical differentiation.
 
-Which English river water bodies warrant further environmental investigation based on ecological/chemical classifications and recorded measures, with cycle comparability and evidence gaps made explicit?
+> Which English river water bodies warrant further environmental investigation based on ecological/chemical classifications and recorded measures, with cycle comparability and evidence gaps made explicit?
 
-**River Water Quality Classification & Environmental Intervention Intelligence.** An environmental authority needs a governed view of where ecological/chemical classifications are weakest, what pressures or measures are recorded, and which water bodies deserve further intervention investigation. This avoids dependence on a huge 72-million-observation raw archive.
+## Core deliverable boundary
 
-## Outcomes and boundaries
+Retain both agreed England exports. Freeze them within one acquisition batch with separate retrieval timestamps and checksums. Use a single latest complete published classification year/cycle for the core baseline; lock its actual value at Week 2. Core screening is limited to the surface-water category available in the export and must be labelled accurately if rivers cannot be separated from canals/transfers. Use up to ten body-level investigation cases; catchment/measure links remain at their published grain.
 
-- Create a river-only classification baseline by compatible cycle, keeping ecological and chemical outcomes separate.
-- Assess change only where comparability is evidenced; otherwise deliver a single-cycle baseline and a documented comparability rejection.
-- Shortlist up to ten water bodies for investigation using classification weakness, missingness and recorded-measure context; test at least two classification/missingness priority rules.
+**Optional / out of core:** Cross-cycle deterioration, raw nutrient time series, causal measure effectiveness and a GIS map needing an additional boundary file are extensions. Cross-cycle change is blocked unless a comparability assessment explicitly passes; a valid single-cycle baseline fully satisfies core delivery.
 
-Deliver evidence for a management investigation decision, with an auditable shortlist of up to ten cases and at least two alternative prioritisation scenarios. Do not manufacture a full shortlist where the data supports fewer cases. Findings may conclude that evidence is insufficient.
+File availability does not prove dimensional support. Before analytical build, the team completes the source→field→metric→deliverable matrix in [data guidance](../data/README.md). Missing mandatory support blocks the gate and requires an approved official replacement or scope decision.
 
-**Data boundary:** Use the agreed Environment Agency England classifications.csv and measures.csv endpoints. They are mutable exports: freeze both at one recorded retrieval timestamp before team analysis. Filter to England river water bodies using actual type codes; include other water-body types only as separately labelled context. Compare classification years/cycles only when methodologically compatible. No raw Water Quality Explorer observations are required.
+## Analytical model
 
-**Model boundary:** Classification fact: water-body identifier × year/cycle × classification level/element × status and other published dimensions. Measures fact: published measure identifier × water-body/catchment links × status/category. Link using stable identifiers with a bridge for many-to-many relationships.
+Classification fact: water-body identifier × year/cycle × classification level/element × status and other published dimensions. Measures fact: published measure identifier × water-body/catchment links × status/category. Link using stable identifiers with a bridge for many-to-many relationships.
 
-**Out of scope:** real operational deployment, confidential case-level data, guaranteed savings/outcome improvements, paid-source dependencies and automatic allocation of services or funding. Optional modelling or enriched sources must not delay or replace the core D1–D12 pack.
+The source contract above controls where a general grain description is conditional. Do not create dimensions absent from the approved input.
 
-## Users and acceptance owners
+## Objectives
 
-- Simulated sponsor/review panel: approves commissioned question, changes and final investigation recommendation.
-- Domain service/planning user: checks whether diagnostic evidence supports the proposed review action.
-- Data steward: verifies source/version, licence, definitions, quality and retention evidence.
-- BI user: tests overview, drill-down, filters and limitations.
-- Independent reviewer: verifies calculations, rerun and requirement-to-test traceability.
+1. Exactly one declared classification year/cycle drives the core baseline and denominator.
+2. Distinct body counts remain unchanged after linking classification elements and measures.
+3. Each investigation distinguishes weak condition, missing evidence and recorded measure status without claiming ecological effectiveness.
 
-These are simulated stakeholder roles, not claims of access to a real organisation.
+## Business questions
 
-## Work allocation
+1. Which river water bodies have the weakest ecological or chemical status in a comparable assessment cycle?
+2. Which apparent changes may reflect methodology rather than environmental change?
+3. Where are recorded measures linked to weaker classifications?
+4. Which bodies have missing classification or measure evidence?
+5. Which cases require field sampling, pressure assessment or delivery-status investigation?
 
-| Accountable role | Project responsibility and evidence |
+## Cross-functional delivery model
+
+| Delivery role | Required project contribution |
 | --- | --- |
-| Business Analyst / Delivery Lead | Own the commissioned decision for Confidential Catchment Environment & River Improvement Authority; record at least eight prioritised requirements, each linked to a deliverable and test; maintain weekly scope and decision logs. |
-| Data Governance Analyst | Register every 030 input and critical field; approve the frozen cohort, licence evidence, glossary and 100% headline-KPI lineage before analysis. |
-| Data Engineer | Implement the stated 030 analytical grain, ingestion and exclusions; deliver a clean rerun with row-count/checksum evidence and no unexplained key duplicates. |
-| BI Developer | Build executive, diagnostic and quality views for the commissioned decision; reconcile at least five 030 dashboard measures and test every visible filter. |
+| Business Analyst / Delivery Lead | Map the annual classification review and quarterly catchment programme meeting, document eight prioritised user requirements and maintain requirement→deliverable→test links; Director of Catchment Environment & River Improvement owns business approval. |
+| Data Governance Analyst | Own the MTL-XF-030 source/metadata register, cohort decision, licence evidence and 100% headline-measure lineage; resolve the specific risk: Cross-cycle methods, repeated elements and many-to-many measure linkage may create false deterioration, body counts or intervention coverage. |
+| Data Engineer | Implement the declared facts, keys, hierarchy and join controls; account for every source row and deliver a second-member reproducible run at the chosen MTL-XF-030 scope. |
+| BI Developer | Implement the annual classification review and quarterly catchment programme meeting overview, diagnostic and quality pages; reconcile five measures and ensure cohort/extension warnings survive filters and export. |
 | Environmental Classification Analyst | Validate status orders and cycle comparability, and reconcile five body/classification counts. |
 | Catchment / GIS Data Steward | Own river-type filters, stable water-body identifiers and many-to-many measure linkage; quantify all unmatched records. |
 | Environmental Programme & Assurance Analyst | Review up to ten investigation cases and prevent recorded measures being presented as proven effectiveness. |
 
-At kickoff, replace role ownership with named team members and record review partners in `CONTRIBUTIONS.md`. Multiple roles per member are permitted, but critical calculations need a reviewer distinct from their author.
+Assign named team members and review partners at kickoff; roles may be combined, but a distinct member must review critical calculations and perform the final clean rerun. The executive and operational stakeholder roles are specified in [business context](BUSINESS_CONTEXT.md).
 
-## Working stages
+## Required investigation approach
 
-1. Week 1: agree at least eight requirements and define expected decisions.
-2. Week 2: inspect actual file schemas, establish available coverage and approve cohort freeze.
-3. Week 3: implement and reconcile analytical facts, keys and exclusions.
-4. Week 4: approve the 8-measure KPI catalogue and denominator rules.
-5. Week 5: complete five supported findings and domain comparisons.
-6. Week 6: compare two decision scenarios, produce the investigation shortlist and BI draft.
-7. Week 7: execute ten or more assurance/UAT scenarios, including project-specific edge cases.
-8. Week 8: independent rerun, executive briefing, presentation and final handover.
+First compare an ecological-status-led queue with an evidence-gap-led queue within the same eligible body set. Preserve status/potential distinctions for modified/artificial bodies. Do not use an all-fail chemical status as if it independently differentiates priority. Catchment-level measures must not be attributed to every body as a proven body-level intervention.
 
-## Sign-off
+## Milestones and acceptance
 
-Follow [D1–D12](DELIVERABLES.md) and [AC1–AC12](ACCEPTANCE_CRITERIA.md). Approve only with reproducible evidence, no unresolved critical/high defects and transparent conditional-data limitations. A change in source availability must be logged; do not silently substitute a newer release.
+| Gate | Reviewers | Evidence / decision |
+| --- | --- | --- |
+| G1 — scope/source, end Week 2 | Business Analyst + Data Governance Analyst + domain specialist | Approve actual period, geography, grain, required input and field support in a source-to-deliverable matrix. Classification/methodology pages and endpoint documentation verified; export schema, actual cycle, body-type filter, measure-link grain and checksums pending. Unsupported mandatory outputs remain blocked, not quietly reclassified as completed. |
+| G2 — model/metrics, end Week 4 | Data Engineer + domain specialist + independent reviewer | Approve row accounting, keys, hierarchy, join cardinality, five source reconciliations and all core metric definitions. |
+| G3 — analytical decision review, end Week 6 | Director of Catchment Environment & River Improvement + operational stakeholders | First compare an ecological-status-led queue with an evidence-gap-led queue within the same eligible body set. Preserve status/potential distinctions for modified/artificial bodies. Do not use an all-fail chemical status as if it independently differentiates priority. Catchment-level measures must not be attributed to every body as a proven body-level intervention. Retain an evidence-insufficient case and a manual review route. |
+| G4 — release, end Week 8 | Simulated Mettelo panel + independent reviewer | Accept D1–D12 only after ten executed domain tests, five BI reconciliations, clean rerun evidence and resolution of all critical/high defects. |
+
+D1–D12 are defined in [deliverables](DELIVERABLES.md). AC1–AC12 and DT1–DT10 are defined in [acceptance criteria](ACCEPTANCE_CRITERIA.md). No real production deployment, automatic funding/service allocation, private-client data or paid-source dependency is required.
