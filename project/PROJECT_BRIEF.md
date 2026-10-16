@@ -6,9 +6,17 @@ This is a **simulated confidential-client engagement using official public/open 
 
 ## Business problem and commission
 
-The authority must prioritise catchment investigations while classification records repeat each water body across elements and assessments, and measures may link to several places. A flat join can make heavily documented bodies look like more water bodies. Historical method changes and widespread chemical failures also mean a simple worst-status ranking may provide little practical differentiation.
+The simulated catchment environment authority coordinates a quarterly programme meeting and an annual classification review. It has to choose where to commission evidence gathering and measure-delivery checks before a river-improvement proposal is advanced.
+
+The Director of Catchment Environment & River Improvement needs a practical investigation agenda from a complex classification and measures register. A water body may have many element records, while one measure may relate to multiple places; a flat report can make documentation density look like a larger environmental problem. A broad chemical-failure label may also provide little distinction between competing cases.
+
+The authority needs to distinguish three operational questions: where ecological condition merits specialist review, where classification evidence is incomplete, and where recorded measures need delivery-status clarification. The commission is a transparent same-cycle baseline and investigation queue that helps programme managers assign those questions without claiming that a listed measure has been implemented or has improved a river.
 
 > Which English river water bodies warrant further environmental investigation based on ecological/chemical classifications and recorded measures, with cycle comparability and evidence gaps made explicit?
+
+**Required management handover:** A catchment review pack containing a single-cycle body baseline, distinct ecological/chemical views, a verified measures linkage, two investigation queues and an evidence-request register for condition or delivery-status checks.
+
+See [the management use case](BUSINESS_CONTEXT.md#practical-management-use-case) for how the review meeting uses this evidence.
 
 ## Core deliverable boundary
 

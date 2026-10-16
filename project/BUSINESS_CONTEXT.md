@@ -6,15 +6,19 @@
 
 This fictional directorate/board is an engagement scenario, not an assertion of a real client's circumstances. The source data remains official public/open data.
 
+## Business setting and immediate planning need
+
+The simulated catchment environment authority coordinates a quarterly programme meeting and an annual classification review. It has to choose where to commission evidence gathering and measure-delivery checks before a river-improvement proposal is advanced.
+
 ## Business problem
 
-The authority must prioritise catchment investigations while classification records repeat each water body across elements and assessments, and measures may link to several places. A flat join can make heavily documented bodies look like more water bodies. Historical method changes and widespread chemical failures also mean a simple worst-status ranking may provide little practical differentiation.
+The Director of Catchment Environment & River Improvement needs a practical investigation agenda from a complex classification and measures register. A water body may have many element records, while one measure may relate to multiple places; a flat report can make documentation density look like a larger environmental problem. A broad chemical-failure label may also provide little distinction between competing cases.
+
+The authority needs to distinguish three operational questions: where ecological condition merits specialist review, where classification evidence is incomplete, and where recorded measures need delivery-status clarification. The commission is a transparent same-cycle baseline and investigation queue that helps programme managers assign those questions without claiming that a listed measure has been implemented or has improved a river.
 
 ## Why the current process is insufficient
 
-The current scenario relies on separately prepared reports without a common source/metric contract. The material failure to prevent is specific: Cross-cycle methods, repeated elements and many-to-many measure linkage may create false deterioration, body counts or intervention coverage.
-
-This creates uncertainty over which cases need investigation and which comparisons should be rejected. No quantified loss, backlog, budget deficit or service failure is invented as a client fact.
+Classification summaries and measures lists are reviewed separately, so a weak status does not arrive with a clear evidence request or responsible programme role. Cross-cycle changes may be interpreted as deterioration before comparability is checked. The replacement must preserve distinct body counts, keep ecological and chemical assessments separate, and connect records only at their supported grain.
 
 ## Stakeholders and decisions
 
@@ -32,15 +36,15 @@ Which English river water bodies warrant further environmental investigation bas
 
 ## Practical management use case
 
-In the programme meeting, the Director starts with a single-cycle ecological baseline, selects a catchment/body and checks the underlying classification level and recorded measures. Where chemical status is uniformly failing, the team explains that limitation rather than inventing a finer ranking. The Programme Manager assigns a field-evidence or measure-delivery-status check; recorded measures are not presented as completed remediation.
+In the quarterly meeting, the Programme Manager opens the declared classification-year/cycle baseline and reviews two queues: ecological-condition cases and evidence-gap cases. The Classification Specialist checks status versus potential and the water-body category, while the Data Steward confirms whether a recorded measure is linked to that body or only to the wider catchment.
+
+The Director commissions a specialist evidence review or a measure-delivery-status enquiry, naming an owner and required evidence. A uniform chemical-failure result is explained rather than used as a spurious tie-breaker. Where cross-cycle comparability cannot be established, the decision uses the valid single-cycle baseline and records the limitation.
 
 ## Current-to-target workflow
 
-1. **Before review:** analyst registers the approved files, coverage and definitions; steward checks the cohort and unresolved exceptions.
-2. **At review:** Director of Catchment Environment & River Improvement opens the overview, then inspects diagnostics and the underlying eligible population before considering a case.
-3. **Challenge:** the relevant stakeholder compares the alternative scenario and asks whether the signal survives missingness, comparability and denominator checks.
-4. **Action:** each accepted case records investigation type, responsible service role, missing evidence, next review and what finding would reverse the recommendation.
-5. **Follow-up:** the next annual classification review and quarterly catchment programme meeting records evidence received and the decision, without claiming the analytical signal itself caused an improvement.
+**Target management handover:** A catchment review pack containing a single-cycle body baseline, distinct ecological/chemical views, a verified measures linkage, two investigation queues and an evidence-request register for condition or delivery-status checks.
+
+The meeting's decision record must contain: the selected case and reporting period; the source-backed finding; the decision to investigate, watch, clarify or close; the responsible stakeholder role; the specific additional evidence requested; and the next review point. Add the evidence that would reverse or narrow the recommendation. A watchlist or no-action conclusion is valid when supported; do not fill the shortlist simply to reach ten cases.
 
 ## Required analytical response
 
@@ -56,7 +60,9 @@ In the programme meeting, the Director starts with a single-cycle ecological bas
 
 ## Proposed benefit monitoring
 
-At kickoff, record a baseline review process and propose measures for: time to regenerate the agreed evidence pack; proportion of agenda recommendations with a complete evidence chain; and proportion of accepted investigations with a role owner and next review. The target for recommendation traceability and ownership is 100%; regeneration time is measured during the independent rerun, with no fabricated pre-project baseline or claimed reduction. These are proposed management measures, not achieved service benefits.
+Measure whether every selected case cites a classification cycle, eligible body identifier, supported measure-link level and investigation owner; target 100%. Simulated users must distinguish poor condition from missing evidence and recorded measures from confirmed delivery. Ecological recovery requires later comparable monitoring and evaluation.
+
+Record the preparation and review baseline at kickoff, then measure evidence-pack regeneration during the independent rerun. No pre-project time saving or achieved operational benefit is assumed. The eight-week engagement is assessed on the usability and traceability of the decision pack; later service outcomes require separate follow-up.
 
 ## Scope and evidence limits
 

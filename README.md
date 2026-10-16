@@ -10,9 +10,15 @@
 
 > This is a **simulated confidential-client engagement using official public/open data**. Client and stakeholder role labels describe a fictional engagement; do not claim a real external Mettelo customer, employment, endorsement or privileged data access. No raw data is uploaded by this specification update.
 
+## Business setting
+
+The simulated catchment environment authority coordinates a quarterly programme meeting and an annual classification review. It has to choose where to commission evidence gathering and measure-delivery checks before a river-improvement proposal is advanced.
+
 ## Business problem
 
-The authority must prioritise catchment investigations while classification records repeat each water body across elements and assessments, and measures may link to several places. A flat join can make heavily documented bodies look like more water bodies. Historical method changes and widespread chemical failures also mean a simple worst-status ranking may provide little practical differentiation.
+The Director of Catchment Environment & River Improvement needs a practical investigation agenda from a complex classification and measures register. A water body may have many element records, while one measure may relate to multiple places; a flat report can make documentation density look like a larger environmental problem. A broad chemical-failure label may also provide little distinction between competing cases.
+
+The authority needs to distinguish three operational questions: where ecological condition merits specialist review, where classification evidence is incomplete, and where recorded measures need delivery-status clarification. The commission is a transparent same-cycle baseline and investigation queue that helps programme managers assign those questions without claiming that a listed measure has been implemented or has improved a river.
 
 ## Commissioned decision
 
@@ -20,9 +26,13 @@ The authority must prioritise catchment investigations while classification reco
 
 ## Practical use
 
-In the programme meeting, the Director starts with a single-cycle ecological baseline, selects a catchment/body and checks the underlying classification level and recorded measures. Where chemical status is uniformly failing, the team explains that limitation rather than inventing a finer ranking. The Programme Manager assigns a field-evidence or measure-delivery-status check; recorded measures are not presented as completed remediation.
+In the quarterly meeting, the Programme Manager opens the declared classification-year/cycle baseline and reviews two queues: ecological-condition cases and evidence-gap cases. The Classification Specialist checks status versus potential and the water-body category, while the Data Steward confirms whether a recorded measure is linked to that body or only to the wider catchment.
 
-The full [business context](project/BUSINESS_CONTEXT.md) names operational stakeholders, decisions, risks and proposed benefit measures.
+The Director commissions a specialist evidence review or a measure-delivery-status enquiry, naming an owner and required evidence. A uniform chemical-failure result is explained rather than used as a spurious tie-breaker. Where cross-cycle comparability cannot be established, the decision uses the valid single-cycle baseline and records the limitation.
+
+**Management handover:** A catchment review pack containing a single-cycle body baseline, distinct ecological/chemical views, a verified measures linkage, two investigation queues and an evidence-request register for condition or delivery-status checks.
+
+The full [business context](project/BUSINESS_CONTEXT.md) sets out stakeholders, decisions, evidence limits and proposed benefit measures.
 
 ## What must be delivered
 
