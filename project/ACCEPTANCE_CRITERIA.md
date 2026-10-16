@@ -38,7 +38,7 @@ Record each case's entity/segment, valid period, supporting measures, reason cod
 | DT1 | Reconcile distinct-body status counts for five selected classifications/catchments. | Five selected published values reproduce within declared source precision, with explicit source coordinates and scope. |
 | DT2 | Show a multi-measure join cannot inflate the count of water bodies. | The invalid comparison, join or denominator is rejected or flagged according to the documented rule; no silent fallback. |
 | DT3 | Reject a cross-cycle deterioration comparison lacking comparability evidence. | The edge case produces an explicit unavailable/exclusion result or a supported calculation, with affected rows quantified. |
-| DT4 | Test unknown status, an unmatched body ID and a non-river exclusion. | The domain boundary remains visible in the analytical output and BI product; no unsupported inference. |
+| DT4 | Test unknown status, an unmatched body ID and exclusion of water-body categories outside the explicitly approved river or combined category. | The domain boundary remains visible in the analytical output and BI product; no unsupported inference. |
 | DT5 | One water body has five classification elements and three linked measures | The linked diagnostic may expand, but the body count remains one. |
 | DT6 | A chemical status is identical for every eligible body | Show no discriminatory power; do not manufacture a ranking from tied values. |
 | DT7 | A modified body reports ecological potential | Preserve potential rather than relabel as natural-body status without a rule. |
