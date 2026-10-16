@@ -71,7 +71,7 @@ For each business question link quantitative evidence, scope, comparison, magnit
 | DT1 — Reconcile distinct-body status counts for five selected classifications/catchments. | To complete |
 | DT2 — Show a multi-measure join cannot inflate the count of water bodies. | To complete |
 | DT3 — Reject a cross-cycle deterioration comparison lacking comparability evidence. | To complete |
-| DT4 — Test unknown status, an unmatched body ID and a non-river exclusion. | To complete |
+| DT4 — Test unknown status, an unmatched body ID and exclusion of water-body categories outside the explicitly approved river or combined category. | To complete |
 | DT5 — One water body has five classification elements and three linked measures | To complete |
 | DT6 — A chemical status is identical for every eligible body | To complete |
 | DT7 — A modified body reports ecological potential | To complete |
